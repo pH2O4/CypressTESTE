@@ -1,0 +1,22 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "Automações Crypress para aplicação .NET",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pH2O4/Cypress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pH2O4/Cypress/issues"
+  },
+  "homepage": "https://github.com/pH2O4/Cypress#readme",
+  "dependencies": {
+    "cypress": "^10.7.0"
+  }
+}
