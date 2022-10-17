@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Fluxo de Assinatura Assai', () => {
+describe('Fluxo de Assinatura Eneva', () => {
     it('Resgate pelo admin - Colaborador Pré Definido', () => {
 
         function AdmOrSinger(emailLogin, passwordLogin) {
