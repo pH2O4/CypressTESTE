@@ -19,7 +19,7 @@ describe('Fluxo de Assinatura Eneva', () => {
         //Largura da régua do cypress deve ser 78%
         //definir Adm (Employee) para resgate, colaborador (Employee) e assinantes (WithdrawWorkflow.DefaultSinger)
         const Administrador = AdmOrSinger("UGPL22T02F6401@ENEVA.COM.BR", "qewrqwer")
-        const Colaborador1 = Colaborador("Ricardo Correa Pascotto", "RICARDO.PASCOTTO@ENEVA.COM.BR", "tegrfed")
+        const Colaborador1 = Colaborador("Lino Lopes Cancado", "LINO.CANCADO@ENEVA.COM.BR", "tegrfed")
         const singer = AdmOrSinger("rodrigo.bayma@eneva.com.br", "qewrqwer")
         const singer2 = AdmOrSinger("FELIPE.PULCHERIO@ENEVA.COM.BR", "qewrqwer")
         const DiadoResgate = 17
@@ -67,9 +67,10 @@ describe('Fluxo de Assinatura Eneva', () => {
         cy.get("#action-bar-btn-finish").click().wait(2000)
         cy.get('i').click({ multiple: true, force: true })
         cy.get("#action-bar-btn-finish").click().wait(20000)
-        // cy.get("#ctl00_linkSair").click()
+        cy.visit('https://localhost:44309/')
+        cy.get("#ctl00_linkSair").click()
 
-        cy.get('#ctl00_MainContent_LoginUser_UserName').type(`${singer2.email}`)
+        cy.get('#ctl00_MainContent_LoginUser_UserName').type(`${singer2.email}`).wait(2000)
         cy.get('#ctl00_MainContent_LoginUser_Password').type(`${singer2.password}`)
         cy.get('#ctl00_MainContent_LoginUser_LoginButton').click()
         Cypress.on('uncaught:exception', (err, runnable) => {
@@ -86,7 +87,8 @@ describe('Fluxo de Assinatura Eneva', () => {
         cy.get("#action-bar-btn-finish", { timeout: 90000 }).click()
         cy.get("#tab-form-element-152dfa59-7e0e-408c-afaa-70078e3e01e2 > div > div > div").click()
         cy.get("#action-bar-btn-finish", { timeout: 90000 }).click().wait(20000)
-        //cy.get("#ctl00_linkSair").click()
+        cy.visit('https://localhost:44309/')
+        cy.get("#ctl00_linkSair").click()
 
         cy.get('#ctl00_MainContent_LoginUser_UserName').type(`${Colaborador1.email}`)
         cy.get('#ctl00_MainContent_LoginUser_Password').type(`${Colaborador1.password}`)
