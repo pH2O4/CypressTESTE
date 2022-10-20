@@ -16,7 +16,6 @@ describe('Fluxo de Assinatura Eneva', () => {
                 password: passwordLogin,
             };
         }
-        //Largura da régua do cypress deve ser 78%
         //definir Adm (Employee) para resgate, colaborador (Employee) e assinantes (WithdrawWorkflow.DefaultSinger)
         const Administrador = AdmOrSinger("UGPL22T02F6401@ENEVA.COM.BR", "qewrqwer")
         const Colaborador1 = Colaborador("Thiago Freitas", "THIAGO.FREITAS@ENEVA.COM.BR", "tegrfed")
@@ -39,8 +38,8 @@ describe('Fluxo de Assinatura Eneva', () => {
         cy.get("#ctl00_MainContent_TabPagesPageControl_gdvRequestWithdraw_DXFREditorcol6_I").type(`${Colaborador1.name}`)
         cy.get("#ctl00_MainContent_TabPagesPageControl_gdvRequestWithdraw_DXSelBtn0_D").click()
         cy.get("#ctl00_MainContent_TabPagesPageControl_btnRequestWithdraw_CD").click()
-        cy.get("#ctl00_MainContent_popupInformExpectedSettlementDate_txtbxSettlementDate").type("2184-07-09")
-        cy.get("#ctl00_MainContent_popupInformExpectedSettlementDate_btnSettlementDate").click().wait(2000)
+      //  cy.get("#ctl00_MainContent_popupInformExpectedSettlementDate_txtbxSettlementDate").type("2184-07-09")
+      //  cy.get("#ctl00_MainContent_popupInformExpectedSettlementDate_btnSettlementDate").click().wait(2000)
         cy.get("#ctl00_MainContent_successRequestPopup_HCB-1 > img").click().wait(2000)
         cy.get("#ctl00_MainContent_TabPagesPageControl_T0T").click()
         cy.get("#ctl00_MainContent_TabPagesPageControl_gdvRequests_DXFREditorcol3_I").type(`${Colaborador1.name}{enter}`)
