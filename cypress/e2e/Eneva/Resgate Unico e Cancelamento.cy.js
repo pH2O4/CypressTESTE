@@ -18,8 +18,7 @@ describe('Resgate Unico', () => {
         //definir Adm (Employee) para resgate, colaborador (Employee) e assinantes (WithdrawWorkflow.DefaultSinger)
         const Administrador = AdmOrSinger("UGPL22T02F6401@ENEVA.COM.BR", "qewrqwer")
         const Colaborador1 = Colaborador("Thiago Freitas", "THIAGO.FREITAS@ENEVA.COM.BR", "tegrfed")
-        const DiadoResgate = 18
-
+        
         cy.visit('https://localhost:44309/')
         cy.get('#ctl00_MainContent_LoginUser_UserName').type(`${Administrador.email}`)
         cy.get('#ctl00_MainContent_LoginUser_Password').type(`${Administrador.password}`)
@@ -35,8 +34,9 @@ describe('Resgate Unico', () => {
         cy.get("#ctl00_MainContent_TabPagesPageControl_gdvRequestWithdraw_DXSelBtn0_D").click()
         cy.get("#ctl00_MainContent_TabPagesPageControl_btnRequestWithdraw_CD").click()
         //quando settlementDate está on
-     cy.get("#ctl00_MainContent_popupInformExpectedSettlementDate_txtbxSettlementDate").type("2184-07-09")
-       cy.get("#ctl00_MainContent_popupInformExpectedSettlementDate_btnSettlementDate").click().wait(2000)
+        cy.get("#ctl00_MainContent_popupInformExpectedSettlementDate_txtbxSettlementDate").type("2184-07-09")
+        cy.get("#ctl00_MainContent_popupInformExpectedSettlementDate_btnSettlementDate").click().wait(2000)
+        //
         cy.get("#ctl00_MainContent_successRequestPopup_HCB-1 > img").click().wait(2000)
         cy.get("#ctl00_MainContent_TabPagesPageControl_T0T").click()
         cy.get("#ctl00_MainContent_TabPagesPageControl_gdvRequests_col7 > table > tbody > tr > td.dx-wrap").click().wait(2000)
